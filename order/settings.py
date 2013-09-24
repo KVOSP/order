@@ -1,4 +1,5 @@
 # Django settings for order project.
+# -*- coding: utf-8 -*- 
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -12,7 +13,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'G:\\¹¤×÷Çø\\Python\\order\\sqlite.db',                      # Or path to database file if using sqlite3.
+        'NAME': 'G:\\å·¥ä½œåŒº\\Python\\order\\sqlite.db',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
@@ -69,7 +70,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-                     'G:/¹¤×÷Çø/Python/SAMS/static/'
+                     'G:/å·¥ä½œåŒº/Python/SAMS/static/'
                      ,
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
@@ -110,7 +111,7 @@ ROOT_URLCONF = 'order.urls'
 WSGI_APPLICATION = 'order.wsgi.application'
 
 TEMPLATE_DIRS = (
-                  'G:/¹¤×÷Çø/Python/SAMS/templates/',
+                  'G:/å·¥ä½œåŒº/Python/order/templates/',
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -123,6 +124,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.admin',
+    'db',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
