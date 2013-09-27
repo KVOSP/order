@@ -25,4 +25,20 @@ def WebHome(request):
     return HttpResponse(html)
     
 def rest(request, offset):
-    return HttpResponse("Hello world")
+	line = {}
+    matrix = []
+    """
+    foodName = []
+    restName = []
+    spec = []
+    """
+    m = db_food.objects.filter(restID_id = offset).order_by("spec")
+            for i in m:
+                #迭代、序列两种方式可以实现,这里只能用序列
+                line['foodName']=db_food.objects.get(foodID = i.foodID).foodName
+                line['restName'] = db_restaurant.objects.get(restID = i.restID_id).restName
+                line['spec'] = db_food.objects.get(foodID = i.foodID).spec
+                matrix.append(dict(line))
+    t = get_template('rest.html')       
+    html = t.render(Context({'matrix':matrix, 'title':"饭店菜单",}))    
+    return HttpResponse(html)
