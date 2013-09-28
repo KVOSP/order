@@ -13,6 +13,7 @@ def WebHome(request):
     restName = []
     address = []
     """
+    rID = db_restaurant.get(city = citys).restID
     m = db_food.objects.filter(city = citys, spec = 'true').order_by("restID_id")
             for i in m:
                 #迭代、序列两种方式可以实现,这里只能用序列
