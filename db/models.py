@@ -9,6 +9,7 @@ class restaurant(models.Model):
     restName =  models.CharField(max_length=50)
     city = models.CharField(max_length=50)
     address = models.CharField(max_length=100)
+	search_fields = ('restID', 'restName')
     
 class food(models.Model):
     def __unicode__(self):
@@ -17,4 +18,5 @@ class food(models.Model):
     foodName =  models.CharField(max_length=50)
     restID = models.ForeignKey('restaurant')
     spec = models.BooleanField()
+	search_fields = ('foodID', 'foodName')
     
