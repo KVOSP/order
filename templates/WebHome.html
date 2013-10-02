@@ -1,5 +1,21 @@
 {% include "header.html" %}
 <body style="margin-top: 50px;">
+<table class="table table-hover table-condensed">	
+	<tr>
+	<th>食物名</th>
+	<th>饭店名</th>
+	<th>饭店位置</th>
+	</tr>
+	<tr>
+	{% for i in matrix %}
+	<td>{{ i.foodName }}</td>
+	<td>{{ i.restName }}</td>
+	<td>{{ i.address }}</td>
+	
+	{% endfor %}
+	</tr>
+	</table>
+
 	
 </body>
 {% include "footer.html" %}

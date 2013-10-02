@@ -22,7 +22,9 @@ def WebHome(request):
 		pass
 	m =   restaurant.objects.filter(city = citys).order_by("restID")
 	for i in m:
-				line['foodName']=food.objects.get(foodID = i.foodID).foodName
+			foods = food.objects.filter(restID_id = i.restID)
+			for j in foods:
+				line['foodName']=food.objects.get(foodID = j.foodID).foodName
 				line['restName'] = restaurant.objects.get(restID = i.restID).restName
 				line['address'] = restaurant.objects.get(restID = i.restID).address
 				matrix.append(dict(line))
